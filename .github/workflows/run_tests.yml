@@ -1,7 +1,18 @@
+name: Test Orchestrator
 
-# this is used to add a manual run capabilty for this set of tests.
+# Allows a “Run workflow” button in the Actions tab
 on:
   workflow_dispatch: {}
 
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-# your tests go here
+      # ---- your tests go here ----
+      - name: Run test for repo 
+        run: |
+          echo "Running tests..."
+          # replace this line with your actual test command(s)
